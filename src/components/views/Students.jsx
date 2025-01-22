@@ -49,17 +49,19 @@ function Students() {
       ) : (
         <>
           <CardContainer>
-            {students.map((student) => {
-              return (
-                <div className="studentCard" key={student.UserEmail}>
-                  <Card>
-                    <p>{student.UserEmail.substring(0, 8)}</p>
-                    <p>{`${student.UserFirstname} ${student.UserLastname}`}</p>
-                    <img src={student.UserImageURL} />
-                  </Card>
-                </div>
-              );
-            })}
+            {students &&
+              students.map &&
+              students.map((student) => {
+                return (
+                  <div className="studentCard" key={student.UserEmail}>
+                    <Card>
+                      <p>{student.UserEmail.substring(0, 8)}</p>
+                      <p>{`${student.UserFirstname} ${student.UserLastname}`}</p>
+                      <img src={student.UserImageURL} />
+                    </Card>
+                  </div>
+                );
+              })}
           </CardContainer>
           <button onClick={() => handleAdd(newStudent)}>Add student</button>
         </>
