@@ -8,7 +8,12 @@ import PageNotFound from "./components/views/PageNotFound.jsx";
 //tutorial timestamp 2:20:25
 
 function App() {
+  // Initialstation -----------------------
   const loggedInUser = "Jon";
+  // State --------------------------------
+  // Handlers -----------------------------
+  // Helpers ------------------------------
+  // View ---------------------------------
 
   return (
     <BrowserRouter>
