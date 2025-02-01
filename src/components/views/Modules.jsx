@@ -1,8 +1,9 @@
-import { CardContainer, Card } from "../UI/Card.jsx";
+import { CardContainer } from "../UI/Card.jsx";
+import ModuleCard from '../entity/module/ModuleCard.jsx';
 import "./Modules.scss";
 
 function Modules() {
-  const modulelist = [
+  const module = [
     {
       ModuleID: 1,
       ModuleName: "Games Programming",
@@ -98,17 +99,7 @@ function Modules() {
     <>
       <h1>Modules</h1>
       <CardContainer>
-        {modulelist.map((module) => {
-          return (
-            <div className="moduleCard" key={module.ModuleCode}>
-              <Card>
-                <p>{module.ModuleCode}</p>
-                <p>{module.ModuleName}</p>
-                <img src={module.ModuleImageURL} />
-              </Card>
-            </div>
-          );
-        })}
+        {module.map((module) => <ModuleCard module={module} key={module.ModuleCode}/>)}
       </CardContainer>
     </>
   );
