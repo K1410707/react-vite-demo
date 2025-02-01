@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import "./header.scss";
 
 function Header(props) {
@@ -7,6 +8,10 @@ function Header(props) {
       <p className="welcome">Welcome {props.loggedInUser}</p>
     </header>
   );
+}
+
+Header.propTypes = {
+  loggedInUser: PropTypes.string.isRequired,
 }
 
 export default Header;
