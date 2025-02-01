@@ -162,14 +162,13 @@ function Students() {
     UserYearName: "2022-23",
   }
   //State
-  const [length , setLength] = useState(studentlist.length);
+  const [students , setStudents] = useState(studentlist);
 
   //Handlers
   const handleAdd = (student) => {
     student.userID = Math.floor((10000 * Math.random()));
-    studentlist.push(student);
-    console.log(`Length of student list: ${(studentlist.length)}`);
-    setLength(studentlist.length);
+    setStudents([...students,newStudent]);
+    console.log(`Length of students: ${(students.length)}`);
   };
   //View
 
@@ -177,7 +176,7 @@ function Students() {
     <>
       <h1>Students</h1>
       <CardContainer>
-        {studentlist.map((student) => {
+        {students.map((student) => {
           return (
             <div className="studentCard" key={student.UserEmail}>
               <Card>
